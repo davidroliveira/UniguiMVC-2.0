@@ -1,23 +1,23 @@
-unit Controller.Module.Main.TControllerModuleMain;
+unit Controller.Module.Main;
 
 interface
 
 uses
   uniGUIMainModule, SysUtils, Classes, UniGUIVars, uniGUIApplication,
 
-  View.Module.Main.TViewModuleMain;
+  View.Module.Main;
 
 type
   TControllerModuleMain = class
   private
     type
-      TViewModuleMain = class(View.Module.Main.TViewModuleMain.TViewModuleMain)
+      TViewModuleMain = class(View.Module.Main.TViewModuleMain)
       public
         constructor Create(Aowner: TComponent; AUniApplication: TComponent); override;
       end;
   strict private
     FView: TControllerModuleMain.TViewModuleMain;
-    procedure Init;
+    procedure BindView;
     procedure UniGUIMainModuleCreate(Sender: TObject);
     procedure UniGUIMainModuleDestroy(Sender: TObject);
   public
@@ -36,10 +36,10 @@ constructor TControllerModuleMain.Create(Aview: TControllerModuleMain.TViewModul
 begin
   inherited Create;
   FView := Aview;
-  Init;
+  BindView;
 end;
 
-procedure TControllerModuleMain.Init;
+procedure TControllerModuleMain.BindView;
 begin
   FView.OnCreate := Self.UniGUIMainModuleCreate;
   FView.OnDestroy := Self.UniGUIMainModuleDestroy;

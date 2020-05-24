@@ -1,9 +1,9 @@
-object ViewMainForm: TViewMainForm
+object ViewFormMain: TViewFormMain
   Left = 0
   Top = 0
   ClientHeight = 299
   ClientWidth = 852
-  Caption = 'ViewMainForm'
+  Caption = 'ViewFormMain'
   OldCreateOrder = False
   MonitoredKeys.Keys = <>
   PixelsPerInch = 96

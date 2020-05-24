@@ -2,12 +2,14 @@ program MVC.Unigui;
 
 uses
   Forms,
-  View.Module.Server.TViewModuleServer in 'src\View\View.Module.Server\View.Module.Server.TViewModuleServer.pas' {ViewModuleServer: TUniGUIServerModule},
-  View.Module.Main.TViewModuleMain in 'src\View\View.Module.Main\View.Module.Main.TViewModuleMain.pas' {ViewModuleMain: TUniGUIMainModule},
-  View.Form.Main.TViewMainForm in 'src\View\View.Form.Main\View.Form.Main.TViewMainForm.pas' {ViewMainForm: TUniForm},
-  Controller.Module.Server.TControllerModuleServer in 'src\Controller\Controller.Module.Server.TControllerModuleServer.pas',
-  Controller.Module.Main.TControllerModuleMain in 'src\Controller\Controller.Module.Main.TControllerModuleMain.pas',
-  Controller.Form.Main.TControllerMainForm in 'src\Controller\Controller.Form.Main.TControllerMainForm.pas';
+  View.Module.Server in 'src\View\View.Module.Server.pas' {ViewModuleServer: TUniGUIServerModule},
+  Controller.Module.Server in 'src\Controller\Controller.Module.Server.pas',
+  View.Module.Main in 'src\View\View.Module.Main.pas' {ViewModuleMain: TUniGUIMainModule},
+  Controller.Module.Main in 'src\Controller\Controller.Module.Main.pas',
+  View.Form.Main in 'src\View\View.Form.Main.pas' {ViewFormMain: TUniForm},
+  Controller.Form.Main in 'src\Controller\Controller.Form.Main.pas',
+  View.Form.Login in 'src\View\View.Form.Login.pas' {ViewFormLogin: TUniLoginForm},
+  Controller.Form.Login in 'src\Controller\Controller.Form.Login.pas';
 
 {$R *.res}
 

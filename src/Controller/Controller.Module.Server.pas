@@ -1,4 +1,4 @@
-unit Controller.Module.Server.TControllerModuleServer;
+unit Controller.Module.Server;
 
 interface
 
@@ -6,13 +6,13 @@ uses
   Forms, Classes, SysUtils, uniGUIServer, uniGUIMainModule, uniGUIApplication, uIdCustomHTTPServer,
   uniGUITypes, UniGUIVars,
 
-  View.Module.Server.TViewModuleServer;
+  View.Module.Server;
 
 type
   TControllerModuleServer = class
   private
     type
-      TViewModuleServer = class(View.Module.Server.TViewModuleServer.TViewModuleServer)
+      TViewModuleServer = class(View.Module.Server.TViewModuleServer)
       protected
         procedure FirstInit; override;
       end;
@@ -23,7 +23,7 @@ type
       FView: TControllerModuleServer.TViewModuleServer;
     class var FInstancia: TControllerModuleServer;
     constructor CreatePrivate;
-    procedure Init;
+    procedure BindView;
     procedure UniGUIServerModuleDestroy(Sender: TObject);
   public
     constructor Create;
@@ -43,7 +43,7 @@ end;
 constructor TControllerModuleServer.CreatePrivate;
 begin
   inherited Create;
-  Init;
+  BindView;
 end;
 
 class function TControllerModuleServer.GetInstance: TControllerModuleServer;
@@ -53,7 +53,7 @@ begin
   Result := FInstancia;
 end;
 
-procedure TControllerModuleServer.Init;
+procedure TControllerModuleServer.BindView;
 begin
   FView := TControllerModuleServer.TViewModuleServer.Create(Application);
   FView.OnDestroy := Self.UniGUIServerModuleDestroy;

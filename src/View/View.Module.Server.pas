@@ -1,4 +1,4 @@
-unit View.Module.Server.TViewModuleServer;
+unit View.Module.Server;
 
 interface
 

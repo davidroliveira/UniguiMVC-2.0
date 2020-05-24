@@ -1,4 +1,4 @@
-unit View.Form.Main.TViewMainForm;
+unit View.Form.Main;
 
 interface
 
@@ -9,7 +9,7 @@ uses
   uniEdit;
 
 type
-  TViewMainForm = class(TUniForm)
+  TViewFormMain = class(TUniForm)
     UniEdit1: TUniEdit;
     UniButton1: TUniButton;
   end;

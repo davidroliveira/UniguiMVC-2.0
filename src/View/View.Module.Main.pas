@@ -1,4 +1,4 @@
-unit View.Module.Main.TViewModuleMain;
+unit View.Module.Main;
 
 interface
 
